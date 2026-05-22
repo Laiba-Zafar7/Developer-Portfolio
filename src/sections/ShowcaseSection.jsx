@@ -11,6 +11,13 @@ const AppShowcase = () => {
   const libraryRef = useRef(null);
   const ycDirectoryRef = useRef(null);
 
+  // Project URLs - Update these with your actual project links
+  const PROJECT_URLS = {
+    ryde: "https://your-ryde-project-url.com",
+    library: "https://your-library-project-url.com",
+    ycDirectory: "https://your-yc-directory-project-url.com",
+  };
+
   useGSAP(() => {
     // Animation for the main section
     gsap.fromTo(
@@ -44,42 +51,58 @@ const AppShowcase = () => {
   }, []);
 
   return (
-    <div id="work" ref={sectionRef} className="app-showcase">
+    <div id="work" ref={sectionRef} className="app-showcase mb-0">
       <div className="w-full">
-        <div className="showcaselayout">
-          <div ref={rydeRef} className="first-project-wrapper">
-            <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Ryde App Interface" />
+        <div className="showcaselayout ">
+          <a
+            href={'https://paper-checker-woad.vercel.app/'}
+            target="_blank"
+            rel="noopener noreferrer"
+            ref={rydeRef}
+            className="first-project-wrapper cursor-pointer hover:opacity-80 transition-opacity mb-0"
+          >
+            <div className="image-wrapper ">
+              <img src="/images/project1.png" alt="Evalica Project mb-0" />
             </div>
             <div className="text-content">
               <h2>
-                On-Demand Rides Made Simple with a Powerful, User-Friendly App
-                called Ryde
+                "Evalica- An intelligent tool for evaluating papers and giving feedback"
               </h2>
-              <p className="text-white-50 md:text-xl">
-                An app built with React Native, Expo, & TailwindCSS for a fast,
-                user-friendly experience.
+              <p className="text-white-50 md:text-xl ">
+                Built using Next.js, Node.js, Expo, Supabase, Azure Vision API, and Gemini API for a full-stack AI-powered evaluation system.
               </p>
             </div>
-          </div>
+          </a>
 
           <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={libraryRef}>
+            <a
+              href={'https://quiz-cloud-app-lxgl.vercel.app/'}
+              target="_blank"
+              rel="noopener noreferrer"
+              ref={libraryRef}
+              className="project cursor-pointer hover:opacity-80 transition-opacity inline-block w-full"
+            >
               <div className="image-wrapper bg-[#FFEFDB]">
                 <img
                   src="/images/project2.png"
                   alt="Library Management Platform"
                 />
               </div>
-              <h2>The Library Management Platform</h2>
-            </div>
+              <h2>A production-level cloud-based quiz system for automated assessment and real-time analytics</h2>
+            </a>
 
-            <div className="project" ref={ycDirectoryRef}>
+            <a
+              href={'https://github.com/Laiba-Zafar7/inventory-dashboard'}
+              target="_blank"
+              rel="noopener noreferrer"
+              ref={ycDirectoryRef}
+              className="project cursor-pointer hover:opacity-80 transition-opacity inline-block w-full"
+            >
               <div className="image-wrapper bg-[#FFE7EB]">
                 <img src="/images/project3.png" alt="YC Directory App" />
               </div>
-              <h2>YC Directory - A Startup Showcase App</h2>
-            </div>
+              <h2>A full-stack inventory management system with real-time CRUD, analytics, and scalable architecture</h2>
+            </a>
           </div>
         </div>
       </div>

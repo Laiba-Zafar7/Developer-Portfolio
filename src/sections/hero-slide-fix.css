@@ -1,0 +1,30 @@
+/* Fix for animated word slot overflowing on mobile */
+
+/* The .slide span needs a fixed height equal to one word row */
+.slide {
+  overflow: hidden;
+  /* Match your mobile h1 line-height: 1.75rem * 1.4 ≈ 40px */
+  height: 2.1rem; /* adjust to match one row of your mobile font size */
+  vertical-align: middle;
+}
+
+/* On sm+ screens, increase to match larger font */
+@media (min-width: 640px) {
+  .slide {
+    height: 2.8rem;
+  }
+}
+
+/* On lg+ (desktop), let it be auto — desktop layout handles it differently */
+@media (min-width: 1024px) {
+  .slide {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  /* GSAP animates this translateY to cycle through words */
+}

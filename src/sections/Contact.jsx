@@ -93,17 +93,28 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
-                    <p className="text">
-                      {loading ? "Sending..." : "Send Message"}
-                    </p>
-                    <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
-                    </div>
-                  </div>
-                </button>
+               <button
+  type="submit"
+  className="group relative overflow-hidden rounded-2xl bg-white px-8 py-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+>
+  {/* Gradient Hover Effect */}
+  <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+  {/* Button Content */}
+  <div className="relative flex items-center gap-3">
+    <p className="font-semibold text-black transition-colors duration-300 group-hover:text-white">
+      {loading ? "Sending..." : "Send Message"}
+    </p>
+
+    <div className="flex items-center justify-center rounded-full bg-black/10 p-2 transition-all duration-300 group-hover:bg-white/20">
+      <img
+        src="/images/arrow-down.svg"
+        alt="arrow"
+        className="size-4 transition-transform duration-300 group-hover:translate-y-1 group-hover:rotate-[-45deg] invert group-hover:invert-0"
+      />
+    </div>
+  </div>
+</button>
               </form>
             </div>
           </div>

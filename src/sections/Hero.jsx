@@ -4,27 +4,37 @@ import gsap from "gsap";
 import AnimatedCounter from "../components/AnimatedCounter";
 import Button from "../components/Button";
 import { words } from "../constants";
-import HeroExperience from "../components/models/hero_models/HeroExperience";
 
 const Hero = () => {
   useGSAP(() => {
     gsap.fromTo(
       ".hero-text h1",
       { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.inOut",
+      }
     );
   });
 
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-hidden ">
+      {/* Background */}
       <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
+        <img src="/images/bg.png" alt="background" />
       </div>
 
-      <div className="hero-layout">
-        {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+      {/* Main Layout */}
+      <div className="hero-layout grid lg:grid-cols-2 grid-cols-1 items-center gap-16 relative z-20">
+        
+        {/* LEFT SIDE */}
+        <header className="flex flex-col justify-center md:px-20 px-5 pt-0">
           <div className="flex flex-col gap-7">
+            
+            {/* Heading */}
             <div className="hero-text">
               <h1>
                 Shaping
@@ -46,31 +56,54 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
+
               <h1>into Real Projects</h1>
               <h1>that Deliver Results</h1>
             </div>
 
-            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              Hi, I’m Adrian, a developer based in Croatia with a passion for
-              code.
+            {/* Description */}
+            <p className="text-white-50 md:text-xl text-base leading-relaxed relative z-10">
+              Hi, I’m Laiba — a developer building clean, scalable, and
+              production-ready solutions.
             </p>
 
-            <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="counter"
-            />
+            {/* Button */}
+          <div className="flex justify-center md:justify-start">
+  <Button
+    text="See My Work"
+    className="md:w-80 md:h-16 w-60 h-12"
+    id="counter"
+  />
+</div>
           </div>
         </header>
 
-        {/* RIGHT: 3D Model or Visual */}
-        <figure>
-          <div className="hero-3d-layout">
-            <HeroExperience />
+        {/* RIGHT SIDE */}
+        <div className="flex flex-col items-center justify-center gap-6 px-5">
+          
+          {/* Profile Image */}
+          <img
+            src="/images/laiba.jpeg"
+            alt="Laiba"
+            className="w-[280px] md:w-[360px] rounded-3xl shadow-2xl object-cover border border-white/10"
+          />
+
+          {/* Achievement Card */}
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 max-w-xl shadow-xl">
+            <h3 className="text-white text-2xl font-semibold mb-4">
+              Innovative Pakistan 2026
+            </h3>
+
+            <p className="text-white-50 text-sm md:text-base leading-relaxed">
+              Awarded 3rd Position among 1,000+ projects from 50 universities
+              nationwide for developing an AI-Based Handwritten Paper Evaluation
+              & Feedback System, securing a cash prize of Rs. 100,000.
+            </p>
           </div>
-        </figure>
+        </div>
       </div>
 
+      {/* Counter Section */}
       <AnimatedCounter />
     </section>
   );
