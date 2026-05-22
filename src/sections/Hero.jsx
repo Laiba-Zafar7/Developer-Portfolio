@@ -21,19 +21,19 @@ const Hero = () => {
   });
 
   return (
-    <section id="hero" className="relative overflow-hidden ">
+    <section id="hero" className="relative overflow-hidden min-h-screen flex flex-col">
       {/* Background */}
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="background" />
       </div>
 
       {/* Main Layout */}
-      <div className="hero-layout grid lg:grid-cols-2 grid-cols-1 items-center gap-16 relative z-20">
-        
+      <div className="hero-layout grid lg:grid-cols-2 grid-cols-1 items-center gap-10 relative z-20 flex-1 py-24 lg:py-32">
+
         {/* LEFT SIDE */}
-        <header className="flex flex-col justify-center md:px-20 px-5 pt-0">
-          <div className="flex flex-col gap-7">
-            
+        <header className="flex flex-col justify-center md:px-20 px-5">
+          <div className="flex flex-col gap-6">
+
             {/* Heading */}
             <div className="hero-text">
               <h1>
@@ -56,31 +56,31 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-
               <h1>into Real Projects</h1>
               <h1>that Deliver Results</h1>
             </div>
 
             {/* Description */}
-            <p className="text-white-50 md:text-xl text-base leading-relaxed relative z-10">
-              Hi, I’m Laiba — a developer building clean, scalable, and
+            <p className="text-white-50 md:text-xl text-base leading-relaxed">
+              Hi, I'm Laiba — a developer building clean, scalable, and
               production-ready solutions.
             </p>
 
             {/* Button */}
-          <div className="flex justify-center md:justify-start">
-  <Button
-    text="See My Work"
-    className="md:w-80 md:h-16 w-60 h-12"
-    id="counter"
-  />
-</div>
+            <div className="flex justify-center md:justify-start mt-2">
+              <Button
+                text="See My Work"
+                className="md:w-80 md:h-16 w-60 h-12"
+                id="btn-work"
+              />
+            </div>
+
           </div>
         </header>
 
         {/* RIGHT SIDE */}
         <div className="flex flex-col items-center justify-center gap-6 px-5">
-          
+
           {/* Profile Image */}
           <img
             src="/images/laiba.jpeg"
@@ -93,7 +93,6 @@ const Hero = () => {
             <h3 className="text-white text-2xl font-semibold mb-4">
               Innovative Pakistan 2026
             </h3>
-
             <p className="text-white-50 text-sm md:text-base leading-relaxed">
               Awarded 3rd Position among 1,000+ projects from 50 universities
               nationwide for developing an AI-Based Handwritten Paper Evaluation
@@ -104,7 +103,10 @@ const Hero = () => {
       </div>
 
       {/* Counter Section */}
-      <AnimatedCounter />
+      <div className="relative z-20 w-full pb-16">
+        <AnimatedCounter />
+      </div>
+
     </section>
   );
 };
